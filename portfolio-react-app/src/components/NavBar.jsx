@@ -9,6 +9,8 @@ import {HiOutlineMail} from 'react-icons/hi';
 import {BsFillPersonLinesFill} from 'react-icons/bs';
 import Logo from '../assets/logo1.png';
 
+import {Link} from 'react-scroll'
+
 const NavBar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
@@ -16,17 +18,32 @@ const NavBar = () => {
     return (
         <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#031428] text-gray-300'>
             <div>
-                <img src={Logo} alt='Logo Image' style={{width: '50px'}} />
+                <img src={Logo} alt='Logo Image' style={{width: '50px'}}/>
             </div>
 
             {/* menu */}
             {/*shows nav menu only when screen is bigger than half*/}
             <ul className='hidden md:flex'> 
-                <li>Home</li>
-                <li>About</li>
-                <li>Skills</li>
-                <li>Projects</li>
-                <li>Contacts</li>
+                <li>
+                    <Link to="home" smooth={true} duration={500}>
+                        Home
+                    </Link>
+                </li>
+                <li>
+                    <Link to="skills" smooth={true} duration={500}>
+                        Skills
+                    </Link>
+                </li>
+                <li>
+                    <Link to="projects" smooth={true} duration={500}>
+                        Projects
+                    </Link>
+                </li>
+                <li>
+                    <Link to="contact" smooth={true} duration={500}>
+                        Contact
+                    </Link>
+                </li>
             </ul>
 
             {/* hamburger */ }
@@ -37,11 +54,27 @@ const NavBar = () => {
 
             { /* mobile menu */ }
             <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#031428] flex flex-col justify-center items-center'}>
-                <li className='py-6 text-4xl'>Home</li>
-                <li className='py-6 text-4xl'>Skills</li>
-                <li className='py-6 text-4xl'>Projects</li>
-                <li className='py-6 text-4xl'>Contacts</li>
-                <li className='py-6 text-4xl'>About</li>
+                
+                <li className='py-6 text-4xl'>
+                    <Link onClick={handleClick} to="home" smooth={true} duration={500}>
+                        Home
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
+                        Skills
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    <Link onClick={handleClick} to="projects" smooth={true} duration={500}>
+                        Projects
+                    </Link>
+                </li>
+                <li className='py-6 text-4xl'>
+                    <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
+                        Contact
+                    </Link>
+                </li>
             </ul>
 
             { /* social icons */ }
