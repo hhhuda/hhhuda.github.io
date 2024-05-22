@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @layer base {
-    /*apply font to body*/
+    /*apply font to body
     body {
-        @apply font-[Nunito]
-    }
+        @apply font-[Poppins]
+    }*/
     li {
         @apply px-4;
         @apply cursor-pointer;
     }
 }
 
-/*this is for the images in skills.jsx*/
-
+/* images in skills.jsx*/
 .content-div {
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,6 +24,7 @@
     height: 250px;
 }
 
+/* transition when hovering over projects */
 .content-div:hover {
     background-image: linear-gradient(
         to right,

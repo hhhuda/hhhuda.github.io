@@ -1,9 +1,12 @@
-import React from 'react';
+//import React from 'react';
 
+import Java from '../assets/java.svg'
+import C from '../assets/c.png'
+import Python from '../assets/python.png'
 import HTML from '../assets/html.png';
 import CSS from '../assets/css.png';
 import JavaScript from '../assets/javascript.png';
-import ReactImg from '../assets/react.png';
+import ReactJS from '../assets/react.png';
 import Tailwind from '../assets/tailwind.png';
 
 const Skills = () => {
@@ -19,15 +22,15 @@ const Skills = () => {
             {/* container for all our icons */}
             <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={HTML} alt="Java icon" />
+                    <img className='w-20 mx-auto' src={Java} alt="Java icon" />
                     <p className='my-4'>Java</p>
                 </div>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={HTML} alt="C icon" />
+                    <img className='w-20 mx-auto' src={C} alt="C icon" />
                     <p className='my-4'>C</p>
                 </div>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={HTML} alt="Python icon" />
+                    <img className='w-20 mx-auto' src={Python} alt="Python icon" />
                     <p className='my-4'>Python</p>
                 </div>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
@@ -43,7 +46,7 @@ const Skills = () => {
                     <p className='my-4'>CSS</p>
                 </div>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                    <img className='w-20 mx-auto' src={ReactImg} alt="React icon" />
+                    <img className='w-20 mx-auto' src={ReactJS} alt="React icon" />
                     <p className='my-4'>React</p>
                 </div>
                 <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
