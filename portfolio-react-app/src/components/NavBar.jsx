@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
     FaBars,
     FaTimes,
@@ -15,33 +15,31 @@ const NavBar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
 
-    const [shrink, setShrink] = useState(false);
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setShrink(true);
-            } else {
-                setShrink(false);
-            }
-        };
+    // const [shrink, setShrink] = useState(false);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         if (window.scrollY > 50) {
+    //             setShrink(true);
+    //         } else {
+    //             setShrink(false);
+    //         }
+    //     };
     
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     return (
         <div className='font-navbar fixed w-full h-[100px] flex justify-between items-center px-4 md:px-12 bg-[#233342] text-gray-300'>
             <div>
-                <img q
-                src={Logo} alt='Logo Image' style={{width: '200px'}}/>
-                
+                <img src={Logo} alt='Logo' style={{width: '200px'}}/>
             </div>
 
             {/* menu */}
             {/*shows nav menu only when screen is bigger than half*/}
-            <ul className='text-3xl hidden md:flex'> 
+            <ul className='text-2xl hidden md:flex'> 
                 <li>
                     <Link to="home" smooth={true} duration={500} className='hover:italic'>
                         Home
