@@ -1,7 +1,16 @@
+// export function createPageUrl(pageName: string) {
+//     return '/' + pageName.replace(/ /g, '-');
+// }
+
+
+
+
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './App.jsx';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -9,4 +18,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
