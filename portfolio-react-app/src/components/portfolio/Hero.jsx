@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
+  /** @param {React.MouseEvent<HTMLAnchorElement>} event */
+  const handleWorkClick = (event) => {
+    event.preventDefault();
+    document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute top-10 right-6 sm:right-16">      
@@ -36,10 +42,7 @@ export default function Hero() {
         </motion.h1>
         <motion.a
           href="#work"
-          onClick={(event) => {
-            event.preventDefault();
-            document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
-          }}
+          onClick={handleWorkClick}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
