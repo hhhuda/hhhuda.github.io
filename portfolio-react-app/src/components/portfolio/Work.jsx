@@ -12,13 +12,13 @@ const projects = [
     link: "#",
   },
   {
-    logo: "⚡",
+    logo: "🛡️",
     title: "FraudFree",
     tag: "UX Research · Accessibility",
     outcome:
       "Shipped the frontend for a feature used by thousands of people, cutting task completion time by roughly 40%.",
-    skills: ["React", "Design systems", "Accessibility"],
-    link: "#",
+    skills: ["Usability testing", "Personas", "Accessibility"],
+    link: "/fraudfree",
   },
 ];
 
@@ -26,8 +26,8 @@ export default function Work() {
   return (
     <section id="work" className="max-w-6xl mx-auto px-6 py-20">
       <div className="flex items-end justify-between mb-12">
-        <h2 className="text-4xl sm:text-5xl font-bold">Selected work</h2>
-        <span className="text-sm text-white/50">2 projects</span>
+        <h2 className="text-4xl sm:text-5xl font-bold">Selected Work</h2>
+        <span className="text-sm text-white/50">two projects</span>
       </div>
       <div className="grid gap-6">
         {projects.map((p, i) => (

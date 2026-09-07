@@ -1,20 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 /**
  * @param {{ project: { link: string, logo: string, tag: string, outcome: string, title: string, skills: string[] }, index: number }} props
  */
 export default function ProjectCard({ project, index }) {
-  return (
-    <motion.a
-      href={project.link}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="group block rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-    >
+  const content = (
+    <>
       <div className="flex items-center gap-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-xl">
           {project.logo}
@@ -38,6 +32,31 @@ export default function ProjectCard({ project, index }) {
         View case study
         <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
       </span>
+    </>
+  );
+
+  const cardClassName = "group block rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300";
+
+  if (project.link.startsWith("/")) {
+    return (
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
+        <Link to={project.link} className={cardClassName}>
+          {content}
+        </Link>
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.a
+      href={project.link}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className={cardClassName}
+    >
+      {content}
     </motion.a>
   );
 }
