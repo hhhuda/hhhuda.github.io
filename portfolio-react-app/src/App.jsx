@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectFraudFree from "./pages/ProjectFraudFree";
+import ProjectEventsia from "./pages/ProjectEventsia";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -14,6 +15,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/fraudfree" element={<ProjectFraudFree />} />
+            <Route path="/eventsia" element={<ProjectEventsia />} />
           </Routes>
         </main>
         <Footer />

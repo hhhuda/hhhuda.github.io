@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import TableOfContents from "../components/portfolio/TableOfContents";
 import CaseStudySection from "../components/portfolio/CaseStudySection";
+import CaseStudyNavigation from "../components/portfolio/CaseStudyNavigation";
 import Figure from "../components/portfolio/Figure";
 
 const tocSections = [
@@ -67,6 +68,10 @@ const Finding = ({ title, children }) => (
 );
 
 export default function ProjectFraudFree() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="max-w-5xl mx-auto px-6 pb-24">
       {/* back link */}
@@ -395,7 +400,7 @@ export default function ProjectFraudFree() {
           </CaseStudySection>
 
           {/* reflections */}
-          <CaseStudySection id="reflections" num="07" title="Reflections" className="border-t-2 border-purple-300/35">
+          <CaseStudySection id="reflections" num="07" title="Reflections" className="border-t-2 border-purple-300/35" showDivider={false}>
             <Finding title="The sample was too small and too young.">Thirteen responses, ten testers. The questionnaire barely reached our target users, and the usability round only did better because we went recruited for it. More input earlier would have meant fewer mid-project changes.</Finding>
             <Finding title="The sessions were rushed.">Course rules meant the pre-test questionnaire could not be sent ahead of time, so it ran live and made sessions feel long. Some participants were uncomfortable answering in person and hurried the debrief.</Finding>
             <Finding title="Repetition in the questionnaire.">
@@ -422,6 +427,8 @@ export default function ProjectFraudFree() {
               Huda Mahmood · COMP3511, UNSW · 2025
             </p>
           </CaseStudySection>
+
+          <CaseStudyNavigation nextLabel="Eventsia" nextTo="/#work" />
         </div>
       </div>
     </div>

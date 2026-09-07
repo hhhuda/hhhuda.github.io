@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import AccessGate from "./AccessGate";
 
 /**
  * @param {{ project: { link: string, logo: string, tag: string, outcome: string, title: string, skills: string[] }, index: number }} props
@@ -36,6 +37,23 @@ export default function ProjectCard({ project, index }) {
   );
 
   const cardClassName = "group block rounded-2xl bg-white/5 border border-white/10 p-6 sm:p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300";
+
+  if (project.requiresAccess) {
+    return (
+      <AccessGate title={project.title} nextTo={project.accessTo} accessCode={project.accessCode}>
+        <motion.button
+          type="button"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className={`${cardClassName} w-full text-left`}
+        >
+          {content}
+        </motion.button>
+      </AccessGate>
+    );
+  }
 
   if (project.link.startsWith("/")) {
     return (

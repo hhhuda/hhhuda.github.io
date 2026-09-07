@@ -10,6 +10,9 @@ const projects = [
       "Surfaced three key friction points, shaping a calmer onboarding flow and measurably fewer support tickets.",
     skills: ["User interviews", "Usability testing", "Synthesis"],
     link: "#",
+    requiresAccess: true,
+    accessTo: "/eventsia",
+    accessCode: "holl0wedOUTspac3",
   },
   {
     logo: "🛡️",
