@@ -29,7 +29,7 @@ export default function Work() {
   return (
     <section id="work" className="max-w-6xl mx-auto px-6 py-20">
       <div className="flex items-end justify-between mb-12">
-        <h2 className="text-4xl sm:text-5xl font-bold">Selected Work</h2>
+        <h2 className="text-4xl sm:text-5xl font-bold">Selected work</h2>
         <span className="text-sm text-white/50">two projects</span>
       </div>
       <div className="grid gap-6">
