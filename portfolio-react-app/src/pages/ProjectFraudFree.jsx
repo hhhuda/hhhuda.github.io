@@ -6,23 +6,23 @@ import CaseStudySection from "../components/portfolio/CaseStudySection";
 import Figure from "../components/portfolio/Figure";
 
 const tocSections = [
-  { id: "problem", num: "01", week: "Week 5", title: "The problem" },
-  { id: "understand", num: "02", week: "Week 6", title: "What we needed to understand" },
-  { id: "questionnaire", num: "03", week: "Week 7", title: "The questionnaire" },
-  { id: "personas", num: "04", week: "Week 8", title: "From research to personas" },
-  { id: "prototype", num: "05", week: "Weeks 8–9", title: "The prototype" },
-  { id: "testing", num: "06", week: "Week 9", title: "Usability testing" },
-  { id: "changed", num: "07", week: "Week 10", title: "What changed" },
-  { id: "differently", num: "08", week: "Week 10", title: "What I'd do differently" },
+  { id: "problem", num: "01", week: "Week 5", title: "Problem" },
+  { id: "research", num: "02", week: "Week 6-7", title: "Research" },
+  { id: "insights", num: "03", week: "Week 8", title: "Insights" },
+  { id: "iter1", num: "04", week: "Week 8-9", title: "Iteration 1" },
+  { id: "testing", num: "05", week: "Weeks 9", title: "Testing" },
+  { id: "iter2", num: "06", week: "Week 10", title: "Iteration 2" },
+  { id: "reflections", num: "07", title: "Reflections" },
 ];
 
 const facts = [
-  { label: "Role", value: "Research and testing. Problem statement, questionnaire analysis, personas and context scenarios, usability test plan, moderation of sessions." },
-  { label: "Team", value: "Four. One teammate designed and built the prototype; the rest of us carried the research." },
+  // { label: "Role", value: "Research and testing. Problem statement, questionnaire analysis, personas and context scenarios, usability test plan, moderation of sessions." },
   { label: "Timeline", value: "5 weeks" },
-  { label: "Methods", value: "Online questionnaire (13 responses). Four personas with context scenarios. Moderated remote usability tests (10 participants, think-aloud). Heuristic issues table." },
-  { label: "Tools", value: "Google Forms, Figma." },
-  { label: "Outcome", value: "Six design changes in the second prototype iteration, each one traceable to a test finding." },
+  { label: "Team", value: "Conducted by a team of 4 UXRs." },
+  { label: "Sample", value: "13 questionnaire responses · 10 usability tests participants" },
+  { label: "Methods", value: "Questionnaire · Personas · Context Scenarios · Usability Testing · Heuristic Evaluation" },
+  // { label: "Tools", value: "Google Forms, Figma." },
+  // { label: "Outcome", value: "Six design changes in the second prototype iteration, each one traceable to a test finding." },
 ];
 
 const logRows = [
@@ -41,7 +41,7 @@ const logQuotes = [
 
 const logSummary = [
   { label: "Completed unassisted", value: "3 of 5" },
-  { label: "Errors", value: "1 (Report button)" },
+  { label: "Errors", value: "1 (Task 4)" },
   { label: "Asked for help", value: "0" },
   { label: "Usefulness", value: "4 / 5" },
   { label: "Ease", value: "3 / 5" },
@@ -60,9 +60,9 @@ const Note = ({ children }) => (
  * @param {{ title: string, children: React.ReactNode }} props
  */
 const Finding = ({ title, children }) => (
-  <div>
-    <h3 className="text-lg font-semibold text-white">{title}</h3>
-    <p className="text-white/70 mt-1 leading-relaxed">{children}</p>
+  <div className="rounded-lg border border-white/10 border-l-2 border-l-purple-300/40 bg-white/[0.03] p-4 transition-colors hover:border-purple-300/50 hover:bg-purple-300/[0.06]">
+    <h3 className="text-md font-semibold text-white">{title}</h3>
+    <p className="mt-2 leading-relaxed text-white/70">{children}</p>
   </div>
 );
 
@@ -82,10 +82,10 @@ export default function ProjectFraudFree() {
           <span>July to August 2025</span>
         </p>
         <h1 className="mt-5 text-5xl sm:text-7xl font-bold tracking-tight leading-none">
-          <span className="text-white/50">Fraud</span>Free
+          <span className="text-white/70">Fraud</span>Free
         </h1>
         <p className="mt-5 text-xl text-white/80 max-w-2xl leading-snug">
-          Helping people recognise and respond to scams, designed around older adults with hearing loss. My first time taking a design problem past the interface.
+          A website prototype designed to help people recognise and respond to scams, made for older adults with hearing loss.
         </p>
       </header>
 
@@ -104,58 +104,63 @@ export default function ProjectFraudFree() {
         <TableOfContents sections={tocSections} />
         {/* table of contents */}
         <div className="min-w-0">
-          <CaseStudySection id="problem" num="01" week="Week 5" title="The problem" myPart="Wrote the problem statement and product description.">
+          <CaseStudySection id="problem" num="01" week="Week 5" title="Problem" myPart="Wrote the problem statement and product description.">
           {/* the problem */}
             <p className="text-xl text-white/90 leading-relaxed">
-              In Week 9, a woman who rates her own hearing two out of five sat down with our prototype and clicked the big red Report button, because she wanted help and that looked like where help would be. It wasn't. She spent two minutes looking for it somewhere else.
+              FraudFree was a five-week group project for Human Computer Interaction at UNSW. We were tasked with designing a legal information interface for older adults with hearing loss, from initial research through to a tested Figma prototype.
             </p>
             <p className="text-white/80 leading-relaxed">
-              We had built the site for her. Weeks earlier I'd written the problem statement promising exactly that. Scamwatch, Action Fraud and the FTC's consumer site all bury help under small type, dense text and legal language, and almost none of it is captioned. For an older person with hearing loss, that is the gap between getting help and giving up. We were going to close it.
+              Existing scam-prevention sites, like Scamwatch, Action Fraud, and the FTC's consumer site, explain things two ways: in videos that are rarely captioned, and in long pages of small type and legal language. For an older person with hearing loss, the first is unusable and the second is hard work. That is often the difference between getting help and giving up.
             </p>
             <p className="text-white/80 leading-relaxed">
-              This was a five-week group project for Human Computer Interaction at UNSW: an interface in the legal-information space, taken from problem statement to tested prototype. The product description I wrote that week promised a case-management system for tracking your complaint, legal flowcharts, progress bars, expert articles and captioned videos. Much of it came straight from the assignment's list of suggested features. Reasonable on paper. We had not yet asked anyone.
+              In Week 5, I crafted the product description. It promised a case-management system, legal flowcharts, progress bars, expert articles, and captioned videos.
+            </p>
+            <p className="text-white/80 leading-relaxed">
+              At that point, though, our ideas came from the assignment brief, <em>not from users</em>.
             </p>
           </CaseStudySection>
 
-          {/* what we needed to understand */}
-          <CaseStudySection id="understand" num="02" week="Week 6" title="What we needed to understand" myPart="Contributed questions to the questionnaire. A teammate led its design.">
+          {/* research */}
+          <CaseStudySection id="research" num="02" week="Week 6 and 7" title="Research" myPart="Contributed questions to, and designed, the questionnaire. Co-wrote the analysis with a teammate.">
             <p className="text-white/80 leading-relaxed">
-              We didn't want to assume that knowing scams exist means knowing what to do about one. Looking back, the questionnaire was really asking three things:
+              Knowing scams exist isn't the same as knowing what to do about one. The questionnaire set out to learn three things: what people do when they're unsure about a message, what makes a site feel trustworthy or overwhelming, and which formats and accessibility tools users are already familiar with.
             </p>
-            <ol className="list-decimal list-inside space-y-2 text-white/80 leading-relaxed pl-2">
-              <li>When someone is unsure whether a message is a scam, what do they actually do?</li>
-              <li>What makes a website feel trustworthy, and what makes one feel overwhelming?</li>
-              <li>Which formats and accessibility tools are already part of how people read online?</li>
-            </ol>
-          </CaseStudySection>
 
-          {/* the questionnaire */}
-          <CaseStudySection id="questionnaire" num="03" week="Week 7" title="The questionnaire" myPart="Co-wrote the analysis with a teammate.">
             <p className="text-white/80 leading-relaxed">
-              Thirteen people answered, and the first thing they told us was that they don't feel ready. 69% had come across a suspicious message. When unsure, 77% search online and 46% ask family or friends. Several ignore it and hope it goes away. Only one person said they could tell a scam on sight.
+              We piloted the fourteen questions with our tutor. Thirteen people responded.               
             </p>
-            <p className="text-white/80 leading-relaxed">
-              Fourteen questions, piloted with our tutor, who cut one as vague and one as a duplicate. What else came back:
+
+            <p className="text-xl text-white/90 leading-relaxed">
+              Here's what they told us:
             </p>
-            <Finding title="Format matters.">Reading text (8 of 13) and captioned video (7 of 13) led, diagrams next, email support last with one vote.</Finding>
+
+            <Finding title="Experience didn't mean confidence.">69% had seen a suspicious message. When unsure, 77% searched online and 46% asked family or friends. Only one participant said they could identify a scam on sight.</Finding>
+
+            <Finding title="Format matters.">Regarding the format of information, text and captioned video won. 8 of 13 participants chose reading, 7 captioned video, diagrams next, email last. Nobody wanted audio alone.</Finding>
+
             <Figure alt="Bar chart of preferred methods for getting information online: reading text 8, captioned videos 7, diagrams 4, live chat or phone 3, email 1." caption="Preferred ways to take in information, 13 responses. Text and captioned video first; nobody wanted audio alone." />
-            <Finding title="Accessibility tools are for everyone.">Even a young, digitally confident sample was already using captions, magnifiers and screen readers.</Finding>
-            <Finding title="Simplicity is trust.">Google, YouTube and Marketplace felt "clean" and "familiar". The sites people avoided had "too many dropdown menus", "too many links", "too many pop-ups", and felt like places you were "more likely to get scammed than find out what isn't a scam".</Finding>
-            <Finding title="The biggest difficulty was volume, not hearing.">"Too much text or information" topped the list. Nobody chose "hard to hear videos".</Finding>
+            
+            <Finding title="Accessibility tools are for everyone.">Even young, confident participants preferred to use captions, magnifiers, and screen readers.</Finding>
+
+            <Finding title="Simplicity builds trust.">Google, YouTube and Facebook Marketplace felt “clean” and “familiar”. Participants were wary of sites with “too many links” or “too many pop-ups” — interfaces that looked more like scams than protection against them.</Finding>
+
+            <Finding title="The biggest difficulty was volume, not hearing.">"Too much text or information" topped the list. Nobody chose "hard to hear videos"..</Finding>
+
             <Figure alt="Pie chart of the biggest difficulty finding scam prevention information online: too much text 30.8%, font or layout hard to follow 23.1%, don't know which websites to trust 23.1%, too complicated 15.4%, jargon 7.7%." caption="Biggest difficulty finding scam information online, 13 responses. Volume and trust, not hearing." />
-            <Finding title="And the feature they wanted most was reporting.">"A way to report a scam easily" rated highest, ahead of simple layout and a trusted government logo. We would go on to put a red button in the header for exactly that.</Finding>
+
+            <Finding title="The feature people wanted most was “a way to report a scam easily.”">We took that literally, putting a prominent red 'Report' button in the header so help was always within reach.</Finding>
           </CaseStudySection>
 
-          {/* from research to personas */}
-          <CaseStudySection id="personas" num="04" week="Week 8" title="From research to personas" myPart="Moved the personas into a Figma template and wrote all four context scenarios. A teammate finished the requirements list.">
+          {/* insights */}
+          <CaseStudySection id="insights" num="04" week="Week 8" title="Insight" myPart="Crafted all four personas and wrote their respective context scenarios.">
             <blockquote className="border-l-2 border-white/30 pl-5 text-xl text-white/90 italic leading-relaxed">
-              Grace came out of the questionnaire's blind spot. 11 of 13 respondents were under 50, and only two had any hearing difficulty. We had patterns, and almost none of them belonged to the person we were designing for.
+              The questionnaire had a blind spot: 11 of 13 respondents were under 50, and only two reported any hearing difficulty, so most of the patterns we observed belonged to people other than our target users. Personas were how we kept them in view.
             </blockquote>
             <p className="text-white/80 leading-relaxed">
-              So we wrote her. <strong className="font-medium text-white">Grace Thompson, 74,</strong> partially deaf, a retired nurse in Wollongong, uses a tablet, finds unfamiliar websites hard, was nearly scammed once. In the scenario I wrote for her, she gets a strange email about her internet bill. On the homepage a bright red button catches her eye: Report. She hesitates, taps it, and a popup asks whether she'd rather call or type. She breathes out. No pressure to speak.
+              Grace Thompson, 74, is partially deaf. She’s a retired nurse in Wollongong, comfortable with a tablet but not on unfamiliar websites, and was nearly scammed once. In her context scenario, she receives a suspicious email about her internet bill, notices the red 'Report' button on the homepage, and taps it. A popup offers her the choice to type rather than call.
             </p>
             <p className="text-white/80 leading-relaxed">
-              Three more personas widened the lens. Aisha, 20, a student who nearly sent her TFN to a fake job ad. Olivia, 35, a mother with no time to verify every delivery text. Yusuf, 42, a community lawyer who needs translated, captioned material for clients.
+              Three more personas widened the lens: Aisha, 20, a student who nearly sent her TFN to a fake job ad. Olivia, 35, a mother with no time to verify every delivery text; and Yusuf, 42, a community lawyer who needs translated, captioned material for clients.
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               <Figure alt="Persona card for Grace Thompson, 74, retired nurse, Wollongong, low tech literacy, partially deaf." caption={`Grace, 74. "It's hard to know who to trust online these days."`} />
@@ -163,45 +168,64 @@ export default function ProjectFraudFree() {
               <Figure alt="Persona card for Olivia Martin, 35, stay-at-home mother, Brisbane, moderate tech literacy." caption={`Olivia, 35. "I'm too busy wrangling the kids to double-check every email or SMS."`} />
               <Figure alt="Persona card for Yusuf Ali, 42, community immigration lawyer, Melbourne, high tech literacy." caption="Yusuf, 42. Needs translated, captioned material for clients." />
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-3">What this meant for the product</h3>
+            
+            <div className="pt-8">
+              <h3 className="text-lg font-semibold text-white mb-3">What did this mean for the product?</h3>
               <ul className="list-disc list-inside space-y-2 text-white/80 leading-relaxed pl-2">
                 <li>Text and captioned video first. Never audio-only.</li>
                 <li>A reporting path with no pressure to speak.</li>
-                <li>Plain language, short articles, nothing that reads like a legal document.</li>
-                <li>Language switching, and recordings people can watch in their own time, muted.</li>
+                <li>Plain language and short articles.</li>
+                <li>Language switching, and recordings that can be watched later, muted.</li>
               </ul>
             </div>
             <p className="text-white/80 leading-relaxed">
-              Those became the requirements: homepage, scam checker, a dashboard for events, recordings and legal clinics, a reporting popup, WCAG 2.1 AA, multilingual readiness.
+              Those became the requirements: homepage, scam checker, a dashboard for events, recordings and legal clinics, a reporting popup, WCAG 2.1 AA, and multilingual readiness.
             </p>
           </CaseStudySection>
 
-          {/* the prototype */}
-          <CaseStudySection id="prototype" num="05" week="Weeks 8–9" title="The prototype" myPart="None of the screens. Our designer built the prototype in Figma; I was an editor on the file.">
+          {/* iteration 1 */}
+          <CaseStudySection id="iter1" num="05" week="Weeks 8–9" title="Prototype: Iteration 1" myPart="Contributed to the prototype in Figma.">
             <p className="text-white/80 leading-relaxed">
-              The prototype was not the site I'd described in Week 5. The case management, the flowcharts and the progress bars were gone. The questionnaire, and a tutor telling us the spec was only a guide, replaced them with what people had actually asked for: a way to check a message, a way to report one, and captioned things to watch.
+              The first prototype was not the site I'd described in Week 5. Case management, legal flowcharts, and progress bars were dropped after the questionnaire results. We replaced them with what respondents had actually asked for: a way to check and report a suspicious message, and captioned videos.
             </p>
-            <p className="text-white/80 leading-relaxed">
-              Four features, built clean. A homepage with survivor stories and current scam news. A dashboard. An AI checker that gives a suspicious file a risk score and highlights common scam phrases. And top right of every page, beside EN and LOGIN, a red button that said Report.
-            </p>
-            <p className="text-white/80 leading-relaxed">
-              The pieces that came straight from the research: recorded webinars with captions, and a sign-language interpreter in a draggable window so it never covers what you're trying to watch.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-5">
+
+            <div className="grid gap-2 pl-4">
+              <article className="border-t border-white/20 pt-3 transition-colors hover:border-purple-300/70">
+                <h3 className="text-base font-medium text-white">Stories and scam news</h3>
+                <p className="mt-1 text-white/80 leading-relaxed">A homepage with survivor stories and current scam news.</p>
+              </article>
+              <article className="border-t border-white/20 pt-3 transition-colors hover:border-purple-300/70">
+                <h3 className="text-base font-medium text-white">A dashboard</h3>
+                <p className="mt-1 text-white/80 leading-relaxed">One place for events, recordings, and legal clinics.</p>
+              </article>
+              <article className="border-t border-white/20 pt-3 transition-colors hover:border-purple-300/70">
+                <h3 className="text-base font-medium text-white">An AI scam checker</h3>
+                <p className="mt-1 text-white/80 leading-relaxed">It gives a suspicious file a risk score and highlights common scam phrases.</p>
+              </article>
+              <article className="border-t border-white/20 pt-3 transition-colors hover:border-purple-300/70">
+                <h3 className="text-base font-medium text-white">A prominent 'Report' button</h3>
+                <p className="mt-1 text-white/80 leading-relaxed">A red button in the header of every page, beside the language and login controls.</p>
+              </article>
+            </div>
+            
+            <div className="grid sm:grid-cols-2 gap-5 pt-2">
               <Figure alt="FraudFree dashboard showing the Past Recordings tab with four webinar thumbnails." caption="Dashboard, Past Recordings. Webinars people can come back to in their own time." />
               <Figure alt="Webinar player with closed captions along the bottom and a sign-language interpreter in a small window at the top right." caption="Captions on by default, interpreter in a draggable window." />
             </div>
             <Note>Add: clean exports of the homepage and the scam checker from Figma. The only copies I have carry the presentation's red annotation boxes.</Note>
+            
+            <p className="text-white/80 leading-relaxed">
+              Two elements came directly from the research: recorded webinars with captions, and a sign-language interpreter in a draggable window, so the content is never obscured.            
+            </p>
           </CaseStudySection>
 
           {/* usability testing */}
-          <CaseStudySection id="testing" num="06" week="Week 9" title="Usability testing" myPart="Wrote the test plan and coordinator script, ran the pilot with our tutor, and moderated two of the ten sessions.">
+          <CaseStudySection id="testing" num="06" week="Week 9" title="Usability Testing" myPart="Wrote the test plan and coordinator script, ran the pilot with our tutor, and moderated two of the ten sessions.">
             <p className="text-white/80 leading-relaxed">
-              I wrote the script, so I was the voice in the room. We're testing the site, not you. Think out loud. There's no wrong way to do this.
+              I planned moderated remote sessions using the think-aloud method, with the moderator stepping in if a participant was stuck for more than two minutes. 
             </p>
-            <p className="text-white/80 leading-relaxed">Five tasks, each with a benchmark and an expected route:</p>
-            <ol className="list-decimal list-inside space-y-2 text-white/80 leading-relaxed pl-2">
+            <p className="text-white/80 leading-relaxed">We created five tasks, each with a time benchmark:</p>
+            <ol className="!mt-3 list-decimal list-outside space-y-1 text-white/80 leading-relaxed pl-8">
               <li>Change the site language to Chinese. <em className="text-white/50 not-italic font-mono text-sm">30 seconds.</em></li>
               <li>Find a story from someone who was scammed. <em className="text-white/50 not-italic font-mono text-sm">1 minute.</em></li>
               <li>Use the scam checker on a suspicious message. <em className="text-white/50 not-italic font-mono text-sm">2 minutes.</em></li>
@@ -209,40 +233,20 @@ export default function ProjectFraudFree() {
               <li>Find the nearest legal clinic. <em className="text-white/50 not-italic font-mono text-sm">2 minutes.</em></li>
             </ol>
             <p className="text-white/80 leading-relaxed">
-              Sessions ran remotely, scripted end to end. Our tutor piloted it first: send the questionnaires in writing for anyone with hearing difficulty, and make every button clickable. Both fixed before the first real session.
+              After piloting the test with our tutor, we made two changes before testing with participants: written instructions were prepared for participants with hearing difficulties, and every button in the prototype was made clickable so we wouldn’t run into any hurdles during the test.
             </p>
             <p className="text-white/80 leading-relaxed">
-              Ten participants, aged 22 to 61. This time three were over 50, and the two who rated their own hearing 2 out of 5 were 54 and 57.
+              We then ran sessions with 10 participants, aged 22 to 61. Three were over 50, including two who rated their hearing 2 out of 5.
             </p>
-            <p className="text-white/80 leading-relaxed">The pattern that mattered:</p>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-left text-xs uppercase tracking-wider text-white/50 border-b border-white/20">
-                    <th className="py-2 pr-6 font-mono font-medium">Age</th>
-                    <th className="py-2 pr-6 font-mono font-medium">Participants</th>
-                    <th className="py-2 font-mono font-medium">Tasks completed, of 5</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-white/10">
-                    <td className="py-2 pr-6 font-mono">22 to 47</td>
-                    <td className="py-2 pr-6 font-mono">7</td>
-                    <td className="py-2">4 or 5, every one</td>
-                  </tr>
-                  <tr className="border-b border-white/10">
-                    <td className="py-2 pr-6 font-mono">54, 57, 61</td>
-                    <td className="py-2 pr-6 font-mono">3</td>
-                    <td className="py-2">3, 3 and 3.5</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <p className="text-white/80 leading-relaxed">
+              The age disparity was striking. On the same prototype, every participant under 50 completed at least four of the five tasks. No participant over 50 completed more than three.
+            </p>
+            
             <p className="text-white/80 leading-relaxed">
               Same prototype. Everyone under 50 finished nearly everything. Everyone over 50 got stuck on two tasks.
             </p>
             <p className="text-white/80 leading-relaxed">
-              My session with the 57-year-old is the one I keep coming back to. Task 4 asked her to find a webinar for parents. She went straight to the red button.
+              One session in particular stayed with me. During the session with a 57-year-old participant, Task 4 asked her to find a webinar for parents. She went straight to the 'Report' button.
             </p>
             {/* participant evaluation log */}
             <div className="rounded-xl border border-white/15 bg-white/5 p-4 sm:p-5">
@@ -254,7 +258,7 @@ export default function ProjectFraudFree() {
                 <div className="flex flex-wrap gap-x-5 gap-y-1 text-[13px] uppercase tracking-wider text-white/50">
                   <span>Age <b className="text-white font-medium">57</b></span>
                   <span>Hearing <b className="text-white font-medium">2 / 5</b></span>
-                  <span>Internet <b className="text-white font-medium">"all the time"</b></span>
+                  <span>Internet use <b className="text-white font-medium">"all the time"</b></span>
                   <span>Has used <b className="text-white font-medium">Scamwatch</b></span>
                 </div>
               </div>
@@ -288,24 +292,24 @@ export default function ProjectFraudFree() {
               </div>
             </div>
             <p className="text-white/80 leading-relaxed">
-              The 61-year-old, in a teammate's session, asked for help four times, rated it 3 out of 5, and said the thing nobody wants to hear about a scam-safety site: "I would struggle on my own."
+              In another session, a 61-year-old participant asked for help four times, rated the prototype’s ease of use 3 out of 5, and told us: "I would struggle on my own."
             </p>
             <p className="text-white/80 leading-relaxed">
-              A teammate compiled all ten sessions into an issues table, each finding rated for severity against Nielsen's heuristics. Six issues made the cut.
+              We compiled the findings from all ten sessions into an issues table and rated each against Nielsen's heuristics. Six issues made the cut.
             </p>
           </CaseStudySection>
 
-          {/* what changed */}
-          <CaseStudySection id="changed" num="07" week="Week 10" title="What changed" myPart="Assembled the final presentation and presented the section on how designing for older users with hearing loss shaped the product.">
-            <p className="text-white/80 leading-relaxed">Six changes, each traceable to a finding. The second is the one the project turns on.</p>
+          {/* iteration 2 */}
+          <CaseStudySection id="iter2" num="07" week="Week 10" title="Prototype: Improvements" myPart="Created and presented the final presentation.">
+            <p className="text-white/80 leading-relaxed">We made six changes to the initial prototype, each traceable to a finding.</p>
 
             <div className="pt-6">
               <h3 className="text-xl font-semibold flex items-baseline gap-3">
                 <span className="font-mono text-sm text-white/50">1</span>
-                Legal clinics had no way to sort by distance.
+                Legal clinics could not be sorted by distance.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                A postcode field and nothing else; Task 5 meant reading the whole list. Now: a sort dropdown with Distance as the default.
+                Task 5 meant reading a whole list. Now: a sort dropdown, with Distance as the default.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
                 <Figure label="Before" labelType="before" alt="Legal Clinics page with only a postcode search bar, highlighted." />
@@ -316,10 +320,10 @@ export default function ProjectFraudFree() {
             <div className="pt-8">
               <h3 className="text-xl font-semibold flex items-baseline gap-3">
                 <span className="font-mono text-sm text-white/50">2</span>
-                "Report" was misunderstood.
+                'Report' was misunderstood.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                In the scenario I wrote, Grace taps it and feels safe. In the room, people read it as part of the header or skipped it, and the woman who most needed it pressed it and didn't find what she was looking for. The feature the questionnaire rated most important was the one nobody could find. Now: "Report a Scam", opening a plain-words form that asks the type of scam and what happened.
+                In the context scenario I wrote, Grace clicks the 'Report' button and feels safe. During testing In the room, participants read it as part of the header or skipped it; the 57-year-old pressed it looking for information. The feature respondents rated most important was the one nobody could find. Now: "Report a Scam", opening a plain-language form.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
                 <Figure label="Before" labelType="before" alt="FraudFree homepage header with EN, LOGIN and a red REPORT button side by side." caption="The red REPORT button, top right, beside EN and LOGIN." />
@@ -334,10 +338,10 @@ export default function ProjectFraudFree() {
             <div className="pt-8">
               <h3 className="text-xl font-semibold flex items-baseline gap-3">
                 <span className="font-mono text-sm text-white/50">3</span>
-                The dashboard changed shape between tabs.
+                The dashboard layout changed between tabs.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                Registered Events was a weekly calendar; Upcoming Events was a paginated list. Older participants had to relearn the page every time they switched. Now: one weekly format, the same arrows and week label in both.
+                'Registered Events' was a weekly calendar, while 'Upcoming Events' was a paginated list. This meant older participants had to relearn the page on every switch. Now: one weekly format for both.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
                 <Figure label="Before · Upcoming Events" labelType="before" alt="Upcoming Events shown as a grid of event cards with page 2 pagination controls highlighted." />
@@ -350,10 +354,10 @@ export default function ProjectFraudFree() {
             <div className="pt-8">
               <h3 className="text-xl font-semibold flex items-baseline gap-3">
                 <span className="font-mono text-sm text-white/50">4</span>
-                The search bar had no button and no memory.
+                The search bar had no button and no history.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                People weren't sure Enter would do anything, and there were no recent searches to fall back on. Now: a visible Search button and a recent-searches dropdown.
+                Participants were unsure Enter would do anything. Now: a visible Search button and a recent-searches dropdown.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
                 <Figure label="Before" labelType="before" alt="Homepage search bar with placeholder text and no button, highlighted." />
@@ -364,10 +368,10 @@ export default function ProjectFraudFree() {
             <div className="pt-8">
               <h3 className="text-xl font-semibold flex items-baseline gap-3">
                 <span className="font-mono text-sm text-white/50">5</span>
-                The active dashboard tab was too faint to see.
+                The active dashboard tab was too faint.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                Light grey on white; participants weren't sure their click had registered. Now: a dark navy active state.
+                Light grey on white left participants unsure their click had registered. Now: a dark navy active state.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
                 <Figure label="Before" labelType="before" alt="Dashboard side menu with Upcoming Events selected in a pale grey, highlighted." />
@@ -378,10 +382,10 @@ export default function ProjectFraudFree() {
             <div className="pt-8">
               <h3 className="text-xl font-semibold flex items-baseline gap-3">
                 <span className="font-mono text-sm text-white/50">6</span>
-                "Submit File" had no confirmation.
+                'Submit File' had no confirmation.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                Files went straight to scanning, and people worried they'd uploaded the wrong thing. Now: a preview of what was uploaded, with Cancel and Proceed.
+                Files went straight to scanning, worrying users. Now: a preview of what was uploaded, with 'Cancel' and 'Proceed' buttons.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
                 <Figure label="Before" labelType="before" alt="Submit File panel already running tests and showing a Scanning status, highlighted." />
@@ -390,24 +394,33 @@ export default function ProjectFraudFree() {
             </div>
           </CaseStudySection>
 
-          {/* what i'd do differently */}
-          <CaseStudySection id="differently" num="08" week="Week 10" title="What I'd do differently" myPart="Presented the reflections. These are mine.">
-            <Finding title="The sample was too small and too young.">Thirteen responses, ten testers. The questionnaire barely reached the people we were designing for; the usability round did better only because we went looking. More input earlier would have meant fewer mid-project changes.</Finding>
-            <Finding title="The sessions were rushed.">Course rules meant we couldn't send the pre-test questionnaire ahead of time, so it ran live and made sessions feel long. Some people were visibly uncomfortable answering in person and hurried the debrief.</Finding>
-            <Finding title="We asked the same thing three ways.">"What did you like least?", "Was anything confusing?", "Any suggestions?" Three questions, one answer. Next time: fewer questions, open-ended, and fewer tasks that each target a distinct feature.</Finding>
-            <Figure alt="Three consecutive post-test questions: what did you like least, was anything confusing, do you have suggestions for improvement." caption="Three questions, one answer." />
-            <Finding title="Think-aloud earned its place. So did stepping in.">Most of what we learned came from listening to people narrate their confusion, not from the questionnaire. Intervening after two minutes stuck cost a little purity and bought the reason behind every wrong click.</Finding>
-            <div className="pt-8 space-y-5">
-              <p className="text-xl text-white/90 leading-relaxed">
-                This was my first time taking a design problem past the interface. Our designer built a clean prototype in a few weeks; that was never the hard part. The hard part was a 57-year-old clicking the wrong button, and knowing we would only ever have found out by sitting there and watching.
-              </p>
-              <p className="text-xl text-white/90 leading-relaxed">
-                I wrote Grace's scenario so that the Report button would be the moment she felt safe. The real woman pressed it and didn't find what she needed. That gap is the whole job. Good UX doesn't start with something that looks intuitive. It starts with finding out what people actually need, testing that, and changing the design when the evidence doesn't back your first idea.
-              </p>
-              <p className="font-mono text-xs uppercase tracking-wider text-white/50 pt-2">
-                Huda Mahmood · COMP3511, UNSW · 2025
-              </p>
+          {/* reflections */}
+          <CaseStudySection id="reflections" num="07" title="Reflections" className="border-t-2 border-purple-300/35">
+            <Finding title="The sample was too small and too young.">Thirteen responses, ten testers. The questionnaire barely reached our target users, and the usability round only did better because we went recruited for it. More input earlier would have meant fewer mid-project changes.</Finding>
+            <Finding title="The sessions were rushed.">Course rules meant the pre-test questionnaire could not be sent ahead of time, so it ran live and made sessions feel long. Some participants were uncomfortable answering in person and hurried the debrief.</Finding>
+            <Finding title="Repetition in the questionnaire.">
+              
+              <Figure alt="Three consecutive post-test questions: what did you like least, was anything confusing, do you have suggestions for improvement." caption="Three questions, one answer." />
+              
+              <span className="mt-3 block">Three questions, one answer. Next time: more meaningful questions, with no overlap between them.</span></Finding>
+            
+            <Finding title="Think-aloud and intervention earned their place.">Most of what we learned came from participants explaining their confusion, not the questionnaire. Intervening after two minutes meant we couldn't always see how long someone would struggle alone, but it helped us understand why they got stuck.
+            </Finding>
+            
+            <div className="pt-4">
+              <div className="rounded-lg border border-dashed border-purple-300/40 bg-black/20 p-4 sm:p-5">
+                <p className="text-xl text-white/90 leading-relaxed">
+                This was my first time taking a design problem past the interface. We thought building the prototype would be the hard part. It turned out the real work was watching a 57-year-old click the wrong button and realising we never would have caught it without watching someone actually use what we'd built.
+                </p>
+                <p className="mt-5 text-xl text-white/90 leading-relaxed">
+                I wrote Grace's context scenario so that the 'Report' button would grant her a moment of safety. Then a real participant clicked it and didn't find what she needed. This gap between our intentions and someone's eventual experience became one of my first lessons in UX research. It seems that good UX doesn't start with intuition, but rather with empathy, challenging personal assumptions, and a willingness to change.
+
+                </p>
+              </div>
             </div>
+            <p className="pt-5 font-mono text-xs uppercase tracking-wider text-white/50">
+              Huda Mahmood · COMP3511, UNSW · 2025
+            </p>
           </CaseStudySection>
         </div>
       </div>

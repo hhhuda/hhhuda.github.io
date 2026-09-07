@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function CaseStudySection({ id, num, week, title, myPart, children }) {
+export default function CaseStudySection({ id, num, week, title, myPart, className = "", children }) {
   return (
     <motion.section
       id={id}
@@ -9,10 +9,10 @@ export default function CaseStudySection({ id, num, week, title, myPart, childre
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.4 }}
-      className="py-12 border-b border-white/10 scroll-mt-24"
+      className={`py-12 border-b border-white/10 scroll-mt-24 ${className}`}
     >
       <div className="font-mono text-xs uppercase tracking-wider text-white/50 mb-3">
-        <span className="text-white/80 font-medium">{num}</span> · {week}
+        <span className="text-white/80 font-medium">{num}</span>{week && ` · ${week}`}
       </div>
       <h2 className="text-2xl sm:text-3xl font-bold mb-3">{title}</h2>
       {myPart && (
