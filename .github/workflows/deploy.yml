@@ -33,6 +33,10 @@ jobs:
         working-directory: portfolio-react-app
         run: npm run build
 
+      - name: Add SPA fallback
+        working-directory: portfolio-react-app
+        run: cp build/index.html build/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
