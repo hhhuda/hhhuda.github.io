@@ -3,6 +3,16 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    logo: "🛡️",
+    title: "FraudFree",
+    tag: "UX Research · Accessibility",
+    outcome:
+      "A scam-prevention prototype for older adults with hearing loss, reshaped by 13 survey responses and 10 usability sessions.",
+      // "Shipped the frontend for a feature used by thousands of people, cutting task completion time by roughly 40%.",
+    skills: ["Usability testing", "Personas", "Accessibility"],
+    link: "/fraudfree",
+  },
+  {
     logo: "🎯",
     title: "Eventsia",
     tag: "Frontend · Product",
@@ -14,15 +24,7 @@ const projects = [
     accessTo: "/eventsia",
     accessCode: "holl0wedOUTspac3",
   },
-  {
-    logo: "🛡️",
-    title: "FraudFree",
-    tag: "UX Research · Accessibility",
-    outcome:
-      "Shipped the frontend for a feature used by thousands of people, cutting task completion time by roughly 40%.",
-    skills: ["Usability testing", "Personas", "Accessibility"],
-    link: "/fraudfree",
-  },
+  
 ];
 
 export default function Work() {

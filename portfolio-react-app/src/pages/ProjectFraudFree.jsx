@@ -19,7 +19,7 @@ const tocSections = [
 const facts = [
   // { label: "Role", value: "Research and testing. Problem statement, questionnaire analysis, personas and context scenarios, usability test plan, moderation of sessions." },
   { label: "Timeline", value: "5 weeks" },
-  { label: "Team", value: "Conducted by a team of 4 UXRs." },
+  { label: "Team", value: "Conducted by a team of 4 UXRs" },
   { label: "Sample", value: "13 questionnaire responses · 10 usability tests participants" },
   { label: "Methods", value: "Questionnaire · Personas · Context Scenarios · Usability Testing · Heuristic Evaluation" },
   // { label: "Tools", value: "Google Forms, Figma." },
@@ -89,7 +89,7 @@ export default function ProjectFraudFree() {
         <h1 className="mt-5 text-5xl sm:text-7xl font-bold tracking-tight leading-none">
           <span className="text-white/70">Fraud</span>Free
         </h1>
-        <p className="mt-5 text-xl text-white/80 max-w-2xl leading-snug">
+        <p className="mt-5 text-xl text-white/90 max-w-2xl leading-snug">
           A website prototype designed to help people recognise and respond to scams, made for older adults with hearing loss.
         </p>
       </header>
@@ -141,17 +141,27 @@ export default function ProjectFraudFree() {
 
             <Finding title="Experience didn't mean confidence.">69% had seen a suspicious message. When unsure, 77% searched online and 46% asked family or friends. Only one participant said they could identify a scam on sight.</Finding>
 
-            <Finding title="Format matters.">Regarding the format of information, text and captioned video won. 8 of 13 participants chose reading, 7 captioned video, diagrams next, email last. Nobody wanted audio alone.</Finding>
+            <Finding title="Format matters.">Regarding the format of information, text and captioned video won. 8 of 13 participants chose reading, 7 captioned video, diagrams next, email last. Nobody wanted audio alone.
+              <Figure 
+                src="/images/preferred-formats.png"
+                alt="Bar chart of preferred methods for getting information online: reading text 8, captioned videos 7, diagrams 4, live chat or phone 3, email 1." 
+                caption="Preferred ways to take in information, 13 responses. Text and captioned video first; nobody wanted audio alone." 
+                className="mt-3"
+              />
+            </Finding>
 
-            <Figure alt="Bar chart of preferred methods for getting information online: reading text 8, captioned videos 7, diagrams 4, live chat or phone 3, email 1." caption="Preferred ways to take in information, 13 responses. Text and captioned video first; nobody wanted audio alone." />
-            
             <Finding title="Accessibility tools are for everyone.">Even young, confident participants preferred to use captions, magnifiers, and screen readers.</Finding>
 
             <Finding title="Simplicity builds trust.">Google, YouTube and Facebook Marketplace felt “clean” and “familiar”. Participants were wary of sites with “too many links” or “too many pop-ups” — interfaces that looked more like scams than protection against them.</Finding>
 
-            <Finding title="The biggest difficulty was volume, not hearing.">"Too much text or information" topped the list. Nobody chose "hard to hear videos"..</Finding>
-
-            <Figure alt="Pie chart of the biggest difficulty finding scam prevention information online: too much text 30.8%, font or layout hard to follow 23.1%, don't know which websites to trust 23.1%, too complicated 15.4%, jargon 7.7%." caption="Biggest difficulty finding scam information online, 13 responses. Volume and trust, not hearing." />
+            <Finding title="The biggest difficulty was volume, not hearing.">"Too much text or information" topped the list. Nobody chose "hard to hear videos"..
+              <Figure 
+                src="/images/biggest-difficulty.png"
+                alt="Pie chart of the biggest difficulty finding scam prevention information online: too much text 30.8%, font or layout hard to follow 23.1%, don't know which websites to trust 23.1%, too complicated 15.4%, jargon 7.7%." 
+                caption="Biggest difficulty finding scam information online, 13 responses. Volume and trust, not hearing." 
+                className="mt-3"
+              />
+            </Finding>
 
             <Finding title="The feature people wanted most was “a way to report a scam easily.”">We took that literally, putting a prominent red 'Report' button in the header so help was always within reach.</Finding>
           </CaseStudySection>
@@ -168,10 +178,26 @@ export default function ProjectFraudFree() {
               Three more personas widened the lens: Aisha, 20, a student who nearly sent her TFN to a fake job ad. Olivia, 35, a mother with no time to verify every delivery text; and Yusuf, 42, a community lawyer who needs translated, captioned material for clients.
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
-              <Figure alt="Persona card for Grace Thompson, 74, retired nurse, Wollongong, low tech literacy, partially deaf." caption={`Grace, 74. "It's hard to know who to trust online these days."`} />
-              <Figure alt="Persona card for Aisha Khan, 20, student and part-time retail assistant, Western Sydney, high tech literacy." caption={`Aisha, 20. "I almost gave my TFN to a fake job ad."`} />
-              <Figure alt="Persona card for Olivia Martin, 35, stay-at-home mother, Brisbane, moderate tech literacy." caption={`Olivia, 35. "I'm too busy wrangling the kids to double-check every email or SMS."`} />
-              <Figure alt="Persona card for Yusuf Ali, 42, community immigration lawyer, Melbourne, high tech literacy." caption="Yusuf, 42. Needs translated, captioned material for clients." />
+              <Figure 
+                src="/images/personas/grace-thompson.png"
+                alt="Persona card for Grace Thompson, 74, retired nurse, Wollongong, low tech literacy, partially deaf." 
+                caption={`Grace, 74. "It's hard to know who to trust online these days."`} 
+              />
+              <Figure 
+                src="/images/personas/aisha-khan.png" 
+                alt="Persona card for Aisha Khan, 20, student and part-time retail assistant, Western Sydney, high tech literacy." 
+                caption={`Aisha, 20. "I almost gave my TFN to a fake job ad."`} 
+              />
+              <Figure 
+                src="/images/personas/olivia-martin.png" 
+                alt="Persona card for Olivia Martin, 35, stay-at-home mother, Brisbane, moderate tech literacy." 
+                caption={`Olivia, 35. "I'm too busy wrangling the kids to double-check every email or SMS."`} 
+              />
+              <Figure 
+                src="/images/personas/yusuf-ali.png" 
+                alt="Persona card for Yusuf Ali, 42, community immigration lawyer, Melbourne, high tech literacy." 
+                caption="Yusuf, 42. Needs translated, captioned material for clients." 
+              />
             </div>
             
             <div className="pt-8">
@@ -214,10 +240,17 @@ export default function ProjectFraudFree() {
             </div>
             
             <div className="grid sm:grid-cols-2 gap-5 pt-2">
-              <Figure alt="FraudFree dashboard showing the Past Recordings tab with four webinar thumbnails." caption="Dashboard, Past Recordings. Webinars people can come back to in their own time." />
-              <Figure alt="Webinar player with closed captions along the bottom and a sign-language interpreter in a small window at the top right." caption="Captions on by default, interpreter in a draggable window." />
+              <Figure 
+                src="/images/iter1-recordings.png"
+                alt="FraudFree dashboard showing the Past Recordings tab with four webinar thumbnails." 
+                caption="Dashboard, Past Recordings. Webinars people can come back to in their own time." 
+              />
+              <Figure 
+                src="/images/iter1-captions.png"
+                alt="Webinar player with closed captions along the bottom and a sign-language interpreter in a small window at the top right." 
+                caption="Captions on by default, interpreter in a draggable window." 
+              />
             </div>
-            <Note>Add: clean exports of the homepage and the scam checker from Figma. The only copies I have carry the presentation's red annotation boxes.</Note>
             
             <p className="text-white/80 leading-relaxed">
               Two elements came directly from the research: recorded webinars with captions, and a sign-language interpreter in a draggable window, so the content is never obscured.            
@@ -316,9 +349,9 @@ export default function ProjectFraudFree() {
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
                 Task 5 meant reading a whole list. Now: a sort dropdown, with Distance as the default.
               </p>
-              <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure label="Before" labelType="before" alt="Legal Clinics page with only a postcode search bar, highlighted." />
-                <Figure label="After" labelType="after" alt="Legal Clinics page with a Sort by dropdown offering Distance, Availability and Popular, Distance selected." />
+              <div className="grid sm:grid-rows-2 gap-5 mt-5">
+                <Figure label="Before" labelType="before" src="images/iter2/legal-before.png" alt="Legal Clinics page with only a postcode search bar, highlighted." />
+                <Figure label="After" labelType="after" src="images/iter2/legal-after.png" alt="Legal Clinics page with a Sort by dropdown offering Distance, Availability and Popular, Distance selected." />
               </div>
             </div>
 
@@ -328,15 +361,11 @@ export default function ProjectFraudFree() {
                 'Report' was misunderstood.
               </h3>
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
-                In the context scenario I wrote, Grace clicks the 'Report' button and feels safe. During testing In the room, participants read it as part of the header or skipped it; the 57-year-old pressed it looking for information. The feature respondents rated most important was the one nobody could find. Now: "Report a Scam", opening a plain-language form.
+                In the context scenario I wrote, Grace clicks the 'Report' button and feels safe. During testing, participants read it as part of the header or skipped it; the 57-year-old pressed it looking for information. The feature respondents rated most important was the one nobody could find. Now: "Report a Scam", opening a plain-language form.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure label="Before" labelType="before" alt="FraudFree homepage header with EN, LOGIN and a red REPORT button side by side." caption="The red REPORT button, top right, beside EN and LOGIN." />
-                <Figure label="After" labelType="after" alt="Header buttons EN, LOGIN and REPORT A SCAM." caption="Relabelled. A tooltip on hover reinforces it." />
-              </div>
-              <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure alt="Report a Scam popup asking what type of scam you are facing, with Call centre, Workplace, Tenancy, Consumer and Other, and a description box." caption="The form behind it. Type of scam, what happened, Submit. No jargon, no pressure to call." />
-                <Note>Add: a clean export of the first-iteration header from Figma for the Before shot. This one still carries a red box from the deck.</Note>
+                <Figure label="After" labelType="after" src="images/iter2/report-after1.png" alt="Header buttons EN, LOGIN and REPORT A SCAM." caption="Relabelled. A tooltip on hover reinforces it." />
+                <Figure label="After" labelType="after" src="images/iter2/report-after2.png" alt="Report a Scam popup asking what type of scam you are facing, with Call centre, Workplace, Tenancy, Consumer and Other, and a description box." caption="The form behind it. Type of scam, what happened, Submit. No jargon, no pressure to call." />
               </div>
             </div>
 
@@ -349,10 +378,8 @@ export default function ProjectFraudFree() {
                 'Registered Events' was a weekly calendar, while 'Upcoming Events' was a paginated list. This meant older participants had to relearn the page on every switch. Now: one weekly format for both.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure label="Before · Upcoming Events" labelType="before" alt="Upcoming Events shown as a grid of event cards with page 2 pagination controls highlighted." />
-                <Figure label="Before · Registered Events" labelType="before" alt="Registered Events shown as a weekly calendar with a July 28 to August 3 date range highlighted." />
-                <Figure label="After · Upcoming Events" labelType="after" alt="Upcoming Events now headed by the same July 28 to August 3 week selector." />
-                <Figure label="After · Registered Events" labelType="after" alt="Registered Events weekly calendar with the same week selector." />
+                <Figure label="Before · Upcoming Events" labelType="before" src="images/iter2/dashboard-before.png" alt="Upcoming Events shown as a grid of event cards with page 2 pagination controls highlighted." />
+                <Figure label="After · Upcoming Events" labelType="after" src="images/iter2/dashboard-after.png" alt="Upcoming Events now headed by the same July 28 to August 3 week selector." />
               </div>
             </div>
 
@@ -364,9 +391,8 @@ export default function ProjectFraudFree() {
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
                 Participants were unsure Enter would do anything. Now: a visible Search button and a recent-searches dropdown.
               </p>
-              <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure label="Before" labelType="before" alt="Homepage search bar with placeholder text and no button, highlighted." />
-                <Figure label="After" labelType="after" alt="Homepage search bar with a yellow Search button and a dropdown of recent searches, and the language menu open showing English, Español, Français and Chinese." />
+              <div className="gap-5 mt-5">
+                <Figure label="After" labelType="after" src="images/iter2/search-after.png" alt="Homepage search bar with a yellow Search button and a dropdown of recent searches." />
               </div>
             </div>
 
@@ -379,8 +405,8 @@ export default function ProjectFraudFree() {
                 Light grey on white left participants unsure their click had registered. Now: a dark navy active state.
               </p>
               <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure label="Before" labelType="before" alt="Dashboard side menu with Upcoming Events selected in a pale grey, highlighted." />
-                <Figure label="After" labelType="after" alt="Dashboard side menu with Upcoming Events selected in dark navy with white text." />
+                <Figure label="Before" labelType="before" src="images/iter2/tab-before.png" alt="Dashboard side menu with Upcoming Events selected in a pale grey, highlighted." />
+                <Figure label="After" labelType="after" src="images/iter2/tab-after.png" alt="Dashboard side menu with Upcoming Events selected in dark navy with white text." />
               </div>
             </div>
 
@@ -392,9 +418,8 @@ export default function ProjectFraudFree() {
               <p className="text-white/80 leading-relaxed mt-2 max-w-2xl">
                 Files went straight to scanning, worrying users. Now: a preview of what was uploaded, with 'Cancel' and 'Proceed' buttons.
               </p>
-              <div className="grid sm:grid-cols-2 gap-5 mt-5">
-                <Figure label="Before" labelType="before" alt="Submit File panel already running tests and showing a Scanning status, highlighted." />
-                <Figure label="After" labelType="after" alt="Submit File panel listing files uploaded, one PNG and one PDF, with Cancel and Proceed buttons and an Uploaded Files summary." />
+              <div className="gap-5 mt-5">
+                <Figure label="After" labelType="after" src="images/iter2/confirmation-after.png" alt="Submit File panel listing files uploaded, one PNG and one PDF, with Cancel and Proceed buttons and an Uploaded Files summary." />
               </div>
             </div>
           </CaseStudySection>
@@ -405,7 +430,10 @@ export default function ProjectFraudFree() {
             <Finding title="The sessions were rushed.">Course rules meant the pre-test questionnaire could not be sent ahead of time, so it ran live and made sessions feel long. Some participants were uncomfortable answering in person and hurried the debrief.</Finding>
             <Finding title="Repetition in the questionnaire.">
               
-              <Figure alt="Three consecutive post-test questions: what did you like least, was anything confusing, do you have suggestions for improvement." caption="Three questions, one answer." />
+              <Figure 
+                src="images/questionnaire-repetition.png"
+                alt="Three consecutive post-test questions: what did you like least, was anything confusing, do you have suggestions for improvement." 
+                caption="Three questions, one answer." />
               
               <span className="mt-3 block">Three questions, one answer. Next time: more meaningful questions, with no overlap between them.</span></Finding>
             
