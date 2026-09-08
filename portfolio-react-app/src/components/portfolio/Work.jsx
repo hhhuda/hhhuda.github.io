@@ -22,7 +22,7 @@ const projects = [
     link: "#",
     requiresAccess: true,
     accessTo: "/eventsia",
-    accessCode: "holl0wedOUTspac3",
+    accessCode: "thispasswordispublic",
   },
   
 ];
